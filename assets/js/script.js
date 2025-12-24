@@ -6,8 +6,11 @@
 */
 
 let timer; // Holds the interval returned by setInterval()
-let minutes = 25; // Current minutes remaining in the timer, defaults to 25
-let seconds = 0; // Current seconds remaining in the timer, defauls to 0
+const workMinutes = 25;
+const breakMinutes = 5;
+let minutes = workMinutes;
+let seconds = 0;
+let currentMode = 'work' // Tracks whether the user is working or on a break
 let isPaused = false; // Stage flag to know whether the user has paused the timer
 
 /**
@@ -15,6 +18,7 @@ let isPaused = false; // Stage flag to know whether the user has paused the time
  * Updates the timer every 1000ms (1 second)
  */
 function startTimer() {
+    clearInterval(timer);
     timer = setInterval(updateTimer,1000);
 }
 
@@ -22,27 +26,34 @@ function startTimer() {
  * Runs once per second while the timer is active
  */
 function updateTimer() {
-    const timerElement = 
-        document.getElementById('timer');
-    // Updates the time remaining on the page 
-    timerElement.textContent = 
-        formatTime(minutes, seconds);
-    // Checks if the timer is completed (00:00)
+    const timerElement = document.getElementById('timer');
+    // Update the time remaining on the page
+    timerElement.textContent = formatTime(minutes, seconds);
+    // If paused, do not count down
+    if (isPaused) return;
+    // If the timer is completed (00:00), switch modes
     if (minutes === 0 && seconds === 0) {
         clearInterval(timer);
-        alert('Time is up! Take a break.');
-    /**
-     * If the timer is not completed or paused, decreases the time remaining
-     * If there are only seconds remaining, just decrease seconds
-     * Otherwise, decrease by one minute and set seconds to 59
-     */
-    } else if (!isPaused) {
-        if (seconds > 0) {
-            seconds--;
+        if (currentMode === 'work') {
+            currentMode = 'break';
+            minutes = breakMinutes;
+            seconds = 0;
+            alert('Good job, time for a break!');
         } else {
-            seconds = 59;
-            minutes--;
+            currentMode = 'work';
+            minutes = workMinutes;
+            seconds = 0;
+            alert('Break over, time to work!');
         }
+        startTimer();
+        return;
+    }
+    //Otherwise, decrease time remaining
+    if (seconds > 0 ) {
+        seconds--;
+    } else {
+        seconds = 59;
+        minutes--;
     }
 }
 
@@ -79,8 +90,8 @@ function togglePauseResume() {
 /* Resets the timer back to 25:00 and restarts immediately */
 function restartTimer() {
     clearInterval(timer);
-    // Reset countdown values to 25:00
-    minutes = 25;
+    currentMode = 'work';
+    minutes = workMinutes;
     seconds = 0;
     // Ensures the timer state is "running"
     isPaused = false;
