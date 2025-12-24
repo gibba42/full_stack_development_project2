@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <meta name="description" content="A Pomodoro timer to track tasks and maintain productivity" />
   </head>
 
@@ -12,6 +13,15 @@
       <h1>Pomodoro timer</h1>
       <p>Add tasks and make progress!</p>
     </header>
-
+    <div class="timer-circle" id="timer">25:00</div>
+    <div class="control-buttons">
+        <button onclick="togglePauseResume()">
+            Pause
+        </button>
+        <button onclick="restartTimer()">
+            Restart
+        </button>
+    </div>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
