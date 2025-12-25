@@ -1,3 +1,9 @@
+/* Colour variables to save having to refer to the hex codes each time they are used */
+:root {
+    --pomo-blue: #5365B5;
+    --pomo-white: #ffffff;
+}
+
 body {
     display: flex;
     align-items: center;
@@ -17,6 +23,46 @@ body {
     width: 500px;
     height: 400px;
     text-align: center;
+}
+
+/* Nav bar */
+.site-nav {
+    background-color: var(--pomo-blue);
+    color: var(--pomo-white);
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.site-nav .nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.site-nav .nav-links a {
+    color: var(--pomo-white);
+    text-decoration: none;
+    padding: 0.5em 0.75em;
+}
+
+.site-nav .nav-links a.active {
+    background-color: var(--pomo-white);
+    border-radius: 4px;
+}
+
+/* Hide the burger menu on desktop */
+.site-nav .nav-toggle {
+    display: none;
+}
+
+.site-nav .nav-toggle-label,
+.site-nav .nav-current {
+    display: none;
 }
 
 .timer-circle {
@@ -44,6 +90,42 @@ body {
 }
 
 .control-buttons button:hover {
-    background-color: #5365B5;
+    background-color: var(--pomo-blue);
     transition: background-color 0.3s;
+}
+
+/* Task list formatting */
+.tasks {
+    margin-top: 24px;
+}
+
+.task-input {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.task-input input {
+    flex: 1;
+    padding: 10px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.task-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
