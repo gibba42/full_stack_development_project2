@@ -15,7 +15,7 @@
 |---------|--------|-----------------|---------------|-----------|
 | Star Timer | Click "Start" | Timer starts and counts down from 25:00, label changes to "Pause" | Timer starts and counts down correctly, label changes | Pass |
 | Pause Timer | Click "Pause" | Timer stops counting down, label changes to "Start" | Timer stops counting down, label changes | Pass | 
-| Restart Timer | Click "Restart" while the timer is running and paused | Timer should reset to 25:00 and the label should change to "Start" whether the timer is paused or running | Timer resets to show "25:00" and pauses in both states |
+| Restart Timer | Click "Restart" while the timer is running and paused | Timer should reset to 25:00 and the label should change to "Start" whether the timer is paused or running | Timer resets to show "25:00" and pauses in both states | Pass |
 
 ## Credits
 
