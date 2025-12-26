@@ -6,7 +6,7 @@
 */
 
 let timer; // Holds the interval returned by setInterval()
-const workMinutes = 25;
+const workMinutes = 1;
 const breakMinutes = 5;
 let minutes = workMinutes;
 let seconds = 0;
@@ -20,6 +20,13 @@ let isPaused = true; // Stage flag to know whether the user has paused the timer
 function startTimer() {
     clearInterval(timer);
     timer = setInterval(updateTimer,1000);
+}
+
+/* Update timer style based on the current mode */
+function updateTimerStyle() {
+    const timerElement = document.getElementById('timer');
+    timerElement.classList.remove('work', 'break');
+    timerElement.classList.add(currentMode);
 }
 
 /**
@@ -45,6 +52,7 @@ function updateTimer() {
             seconds = 0;
             alert('Break over, time to work!');
         }
+        updateTimerStyle();
         startTimer();
         return;
     }

@@ -1,6 +1,7 @@
 /* Colour variables to save having to refer to the hex codes each time they are used */
 :root {
     --pomo-blue: #5365B5;
+    --pomo-light-blue: #8D99CE;
     --pomo-dark-blue: #3F4E92;
     --pomo-white: #ffffff;
 }
@@ -81,6 +82,14 @@ body {
     font-weight: 700;
     color: var(--pomo-white);
     background: var(--pomo-blue);
+}
+
+.timer-circle.work {
+    background-color: var(--pomo-blue);
+}
+
+.timer-circle.break {
+    background-color: var(--pomo-light-blue);
 }
 .control-buttons {
     margin-top: 75px;

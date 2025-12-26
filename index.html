@@ -22,27 +22,27 @@
         </div>
     </nav>
     <main class="page">
-      <header>
-        <h1>Pomodoro timer</h1>
-        <p>Add tasks and make progress!</p>
-      </header>
-      <div class="timer-circle" id="timer">25:00</div>
-      <div class="control-buttons">
-          <button onclick="togglePauseResume()">
-              Start
-          </button>
-          <button onclick="restartTimer()">
-              Restart
-          </button>
-      </div>
-      <section class="tasks">
-          <h2>Tasks</h2>
-          <div class="task-input">
-              <input id="taskInput" type="text" placeholder="Add a task" maxlength="120" />
-              <span onclick="newElement()" class="addBtn">Add</span>
-          </div>
-          <ul id="taskList" class="task-list"></ul>
-      </section>
+    <header>
+      <h1>Pomodoro timer</h1>
+      <p>Add tasks and make progress!</p>
+    </header>
+    <div class="timer-circle" id="timer">25:00</div>
+    <div class="control-buttons">
+        <button onclick="togglePauseResume()">
+            Start
+        </button>
+        <button onclick="restartTimer()">
+            Restart
+        </button>
+    </div>
+    <section class="tasks">
+        <h2>Tasks</h2>
+        <div class="task-input">
+            <input id="taskInput" type="text" placeholder="Add a task" maxlength="120" />
+            <span onclick="newElement()" class="addBtn">Add</span>
+        </div>
+        <ul id="taskList" class="task-list"></ul>
+    </section>
     </main>
     <script src="assets/js/script.js"></script>
   </body>
