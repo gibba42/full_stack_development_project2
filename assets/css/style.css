@@ -1,6 +1,7 @@
 /* Colour variables to save having to refer to the hex codes each time they are used */
 :root {
     --pomo-blue: #5365B5;
+    --pomo-dark-blue: #3F4E92;
     --pomo-white: #ffffff;
 }
 
@@ -116,16 +117,21 @@ body {
     margin: 0;
 }
 
-.task-item {
+.task-list li {
+    background: var(--pomo-white);
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px 8px;
-    border-bottom: 1px solid #ddd;
+    align-items: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.task-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* Darker background on hover */
+.task-list li:hover {
+    background: var(--pomo-dark-blue);
+    color: var(--pomo-white);
 }
+
