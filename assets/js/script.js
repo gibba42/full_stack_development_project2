@@ -79,7 +79,7 @@ function togglePauseResume() {
     if (isPaused) {
         // Stops the 1 second intervals while paused
         clearInterval(timer);
-        pauseResumeButton.textContent = 'Resume';
+        pauseResumeButton.textContent = 'Start';
     } else {
         // Restarts the 1 second intervals when resumed
         startTimer();
@@ -107,6 +107,3 @@ function restartTimer() {
     // Restart the timer
     startTimer();
 }
-
-// Start the timer on page load
-startTimer();
