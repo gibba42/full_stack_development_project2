@@ -66,17 +66,19 @@ body {
     display: none;
 }
 
+/* Timer formatting */
 .timer-circle {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: min(60vmin, 320px);
+    height: min(60vmin, 320px);
     margin: 20px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: clamp(48px, 10vmin, 96px);
+    font-weight: 700;
+    color: var(--pomo-white);
+    background: var(--pomo-blue);
 }
-
 .control-buttons {
     margin-top: 75px;
     display: flex;
