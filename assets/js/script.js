@@ -6,7 +6,7 @@
 */
 
 let timer; // Holds the interval returned by setInterval()
-const workMinutes = 1;
+const workMinutes = 25;
 const breakMinutes = 5;
 let minutes = workMinutes;
 let seconds = 0;

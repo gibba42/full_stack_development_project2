@@ -56,7 +56,7 @@ body {
 }
 
 .site-nav .nav-links a.active {
-    background-color: var(--pomo-white);
+    background-color: var(--pomo-dark-blue);
     border-radius: 4px;
 }
 
@@ -68,6 +68,66 @@ body {
 .site-nav .nav-toggle-label,
 .site-nav .nav-current {
     display: none;
+}
+
+/* Sizing for mobile screens */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem;
+    }
+    .content {
+        padding: 0 15px;
+    }
+
+    /* Change nav to burger menu */
+    .site-nav {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    .site-nav .nav-top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .site-nav .nav-toggle-label,
+    .site-nav .nav-current {
+        display: inline-flex;
+        align-items: center;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 80%;
+    }
+
+    .site-nav .nav-toggle-label {
+        display: inline-flex;
+        font-size: 1.6rem;
+        cursor: pointer;
+    }
+
+    /* Hide links on mobile */
+    .site-nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .site-nav .nav-links a {
+        text-align: center;
+        padding: 0.6em 0.3em;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .site-nav .nav-toggle:checked ~ .nav-links {
+        display: flex;
+    }
 }
 
 /* Timer formatting */
