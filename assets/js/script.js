@@ -95,25 +95,20 @@ function togglePauseResume() {
     }
 }
 
-/* Resets the timer back to 25:00 and restarts immediately */
+/* Resets the timer back to 25:00 and pauses */
 function restartTimer() {
     clearInterval(timer);
     currentMode = 'work';
     minutes = workMinutes;
     seconds = 0;
-    // Ensures the timer state is "running"
+    // Ensures the timer state is "paused" and updates the button to "Start"
     isPaused = false;
+    togglePauseResume();
     // Updates the display so that it shows the reset values
     const timerElement = 
         document.getElementById('timer');
     timerElement.textContent = 
         formatTime(minutes, seconds);
-    // Resets the pause/resume button back to "Pause"
-    const pauseResumeButton = 
-        document.querySelector('.control-buttons button');
-    pauseResumeButton.textContent = 'Pause';
-    // Restart the timer
-    startTimer();
 }
 
 /**
