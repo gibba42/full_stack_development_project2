@@ -11,7 +11,7 @@ const breakMinutes = 5;
 let minutes = workMinutes;
 let seconds = 0;
 let currentMode = 'work' // Tracks whether the user is working or on a break
-let isPaused = false; // Stage flag to know whether the user has paused the timer
+let isPaused = true; // Stage flag to know whether the user has paused the timer
 
 /**
  * Starts the timer 'tick'
