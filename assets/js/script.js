@@ -107,3 +107,33 @@ function restartTimer() {
     // Restart the timer
     startTimer();
 }
+
+/**
+ * To do list
+ * Allows users to add tasks below the timer and tick them off as they're completed
+ */
+
+//Create a new list item when clicking on the "Add" button
+function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("taskInput").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+        alert("Add a description of the task.");
+    } else {
+        document.getElementById("taskList").appendChild(li);
+    }
+    document.getElementById("taskInput").value = "";
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+    for (i = 0; i < close.length; i++) {
+        close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+        }
+    }
+}
