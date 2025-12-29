@@ -130,6 +130,18 @@ body {
     }
 }
 
+.btn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--pomo-blue);
+    transition: background-color 0.3s;
+}
+
 /* Timer formatting */
 .timer-circle {
     width: min(60vmin, 320px);
@@ -176,6 +188,7 @@ body {
 
 .task-input {
     display: flex;
+    align-items: center;
     gap: 8px;
     margin-bottom: 12px;
 }
@@ -223,10 +236,12 @@ body {
 
 .emoji-group {
     display: flex;
-    align-items: center;
+    justify-content: center;
     gap: 1 rem;
     margin-bottom: 1 rem;
     border: none;
+    margin: 1rem 0;
+    padding: 0;
 }
 
 .emoji-group label {
@@ -240,6 +255,25 @@ body {
 
 .emoji-group input:checked + span {
     outline: 2px solid var(--pomo-dark-blue);
+}
+
+.emoji-group input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.emoji-group input[type="radio"]:checked + img {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.emoji-group img {
+    width: 48px;
+    height: 48px;
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
 }
 
 .mood-icon {
@@ -263,10 +297,4 @@ button {
 
 .hidden {
     display: none;
-}
-
-.control-buttons {
-    margin-top: 75px;
-    display: flex;
-    justify-content: space-evenly;
 }

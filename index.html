@@ -39,7 +39,7 @@
         <h2>Tasks</h2>
         <div class="task-input">
             <input id="taskInput" type="text" placeholder="Add a task" maxlength="120" />
-            <span onclick="newElement()" class="addBtn">Add</span>
+            <span onclick="newElement()" class="btn">Add</span>
         </div>
         <ul id="taskList" class="task-list"></ul>
     </section>
@@ -69,12 +69,12 @@
           rows="4"
           placeholder="Add any notes you would like to capture about this session."
         ></textarea>
-        <button type="submit">Save session</button>
+        <button class="btn" type="submit">Save session</button>
         <p id="feedback-message" class="hidden" aria-live="polite"></p>
       </form>
     </section>
     <div id="feedbackList"></div>
-    <button id="resetFeedback" class="reset-btn">Clear saved feedback</button>
+    <button id="resetFeedback" class="btn">Clear saved feedback</button>
     </main>
     <script src="assets/js/script.js"></script>
   </body>

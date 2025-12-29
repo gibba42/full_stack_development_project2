@@ -8,7 +8,7 @@
 |-------|-------------|-----|--------|
 | Start not working on first click | The user has to click the "Start" button twice when the page is loaded to start the timer. | Changed 'let isPaused = false' to 'let isPaused = true' at the start of the script.js file. | Resolved |
 | Nav bar not pinned to top of page | The navigation bar was in a variable position depending on the amount of content on a page | Added a "page" class that kept the centered formatting, and moved the nav bar outside of it. | Resolved |
-| Feedback not saving emojis | Users can save text on how their session was, but emojis are not saving or being displayed. | Pending | In progress |
+| Feedback not saving emojis | Users can save text on how their session was, but emojis are not saving or being displayed. | Updated the script so that selected emojis are saved and displayed above saved feedback. | Resolved |
 
 ## Testing
 
