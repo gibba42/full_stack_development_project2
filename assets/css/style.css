@@ -223,6 +223,7 @@ body {
 
 .emoji-group {
     display: flex;
+    align-items: center;
     gap: 1 rem;
     margin-bottom: 1 rem;
     border: none;
@@ -241,6 +242,13 @@ body {
     outline: 2px solid var(--pomo-dark-blue);
 }
 
+.mood-icon {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
 textarea {
     width: 100%;
     padding: 0.5rem;
@@ -255,4 +263,10 @@ button {
 
 .hidden {
     display: none;
+}
+
+.control-buttons {
+    margin-top: 75px;
+    display: flex;
+    justify-content: space-evenly;
 }

@@ -8,6 +8,7 @@
 |-------|-------------|-----|--------|
 | Start not working on first click | The user has to click the "Start" button twice when the page is loaded to start the timer. | Changed 'let isPaused = false' to 'let isPaused = true' at the start of the script.js file. | Resolved |
 | Nav bar not pinned to top of page | The navigation bar was in a variable position depending on the amount of content on a page | Added a "page" class that kept the centered formatting, and moved the nav bar outside of it. | Resolved |
+| Feedback not saving emojis | Users can save text on how their session was, but emojis are not saving or being displayed. | Pending | In progress |
 
 ## Testing
 
@@ -25,3 +26,5 @@
     - The basic functionality of the Pomodoro timer was based on the 'Geeks for Geeks - Create a Pomodoro timer using html css and javascript' tutorial. This was then built on to add additional functionality.
 - Task list
     - The task list is based on the 'W3 Schools - How to js to do list' tutorial.
+- Feedback form storage
+    - The ability for users to save feedback on their sessions is based on the 'peerdh - Building a User Feedback System for Web Applications Using Local Storage' tutorial.

@@ -194,15 +194,39 @@ function displayFeedback() {
     const feedbackList = document.getElementById('feedbackList');
     feedbackList.innerHTML = '';
     const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+    const moodImages = {
+        happy: 'assets/images/ranking-happy.png',
+        okay: 'assets/images/ranking-okay.png',
+        bad: 'assets/images/ranking-bad.png'
+    };
+    const moodAlts = {
+        happy: 'happy smiley-face',
+        okay: 'okay smiley-face',
+        bad: 'sad smiley-face'
+    };
     feedbacks.forEach(feedback => {
         const feedbackItem = document.createElement('div');
         feedbackItem.classList.add('feedback-item');
+        const moodSrc = moodImages[feedback.mood];
+        const moodAlt = moodAlts[feedback.mood] || 'mood';
         feedbackItem.innerHTML = `
+            ${moodSrc ? `<img class="mood-icon" src="${moodSrc}" alt="${moodAlt}">` : ''}
             <p>${feedback.feedbackMessage}</p>
             `;
         feedbackList.appendChild(feedbackItem);
     });
 }
+
+// Reset the saved feedback
+document.getElementById('resetFeedback').addEventListener('click', function () {
+    const confirmReset = confirm(
+        'Are you sure you want to delete all saved feedback?'
+    );
+    if (confirmReset) {
+        localStorage.removeItem('feedbacks');
+        displayFeedback();
+    }
+});
 
 // Display feedback on page load
 document.addEventListener('DOMContentLoaded', displayFeedback);

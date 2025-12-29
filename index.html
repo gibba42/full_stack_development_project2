@@ -49,17 +49,16 @@
         <fieldset class="emoji-group">
           <legend>How did you feel?</legend>
           <label>
-            <input type="radio" name="mood" value="great" required>
-            😊
+            <input type="radio" name="mood" value="happy" required>
             <img src="assets/images/ranking-happy.png" alt="happy smiley-face">
           </label>
           <label>
             <input type="radio" name="mood" value="okay">
-            😐
+            <img src="assets/images/ranking-okay.png" alt="okay smiley-face">
           </label>
           <label>
             <input type="radio" name="mood" value="bad">
-            😞
+            <img src="assets/images/ranking-bad.png" alt="sad smiley-face">
           </label>
         </fieldset>
         <label for="feedback-text">
@@ -73,8 +72,9 @@
         <button type="submit">Save session</button>
         <p id="feedback-message" class="hidden" aria-live="polite"></p>
       </form>
-    </section>"
+    </section>
     <div id="feedbackList"></div>
+    <button id="resetFeedback" class="reset-btn">Clear saved feedback</button>
     </main>
     <script src="assets/js/script.js"></script>
   </body>
