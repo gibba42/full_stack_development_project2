@@ -209,3 +209,50 @@ body {
     color: var(--pomo-white);
 }
 
+/* Session feedback */
+.session-feedback {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--pomo-white);
+    border-radius: 8px;
+}
+
+.session-feedback h2 {
+    margin-bottom: 1rem;
+}
+
+.emoji-group {
+    display: flex;
+    gap: 1 rem;
+    margin-bottom: 1 rem;
+    border: none;
+}
+
+.emoji-group label {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.emoji-group input {
+    display: none;
+}
+
+.emoji-group input:checked + span {
+    outline: 2px solid var(--pomo-dark-blue);
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    resize: vertical;
+}
+
+button {
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}

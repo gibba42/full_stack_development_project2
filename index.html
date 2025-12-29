@@ -43,6 +43,37 @@
         </div>
         <ul id="taskList" class="task-list"></ul>
     </section>
+    <section class="session-feedback" aria-labelledby="feedback-heading">
+      <h2 id="feedback-heading">How did your session go?</h2>
+      <form id="feedback-form">
+        <fieldset class="emoji-group">
+          <legend>How did you feel?</legend>
+          <label>
+            <input type="radio" name="mood" value="great" required>
+            😊
+            <img src="assets/images/ranking-happy.png" alt="happy smiley-face">
+          </label>
+          <label>
+            <input type="radio" name="mood" value="okay">
+            😐
+          </label>
+          <label>
+            <input type="radio" name="mood" value="bad">
+            😞
+          </label>
+        </fieldset>
+        <label for="feedback-text">
+          What went well/ what didn't?
+        </label>
+        <textarea
+          id="feedback-text"
+          rows="4"
+          placeholder="Add any notes you would like to capture about this session."
+        ></textarea>
+        <button type="submit">Save session</button>
+        <p id="feedback-message" class="hidden" aria-live="polite"></p>
+      </form>
+    </section>"
     </main>
     <script src="assets/js/script.js"></script>
   </body>
