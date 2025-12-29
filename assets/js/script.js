@@ -169,3 +169,40 @@ list.addEventListener('click', function(ev) {
         ev.target.classList.toggle('checked');
     }
 }, false);
+
+/**
+ * Feedback form
+ */
+document.getElementById('feedback-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const mood = document.querySelector('input[name="mood"]:checked')?.value || '';
+    const feedbackMessage = document.getElementById('feedback-text').value;
+    const feedback = {mood, feedbackMessage};
+
+    saveFeedback(feedback);
+    displayFeedback();
+    this.reset();
+});
+
+function saveFeedback(feedback) {
+    let feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+    feedbacks.push(feedback);
+    localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+}
+
+function displayFeedback() {
+    const feedbackList = document.getElementById('feedbackList');
+    feedbackList.innerHTML = '';
+    const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+    feedbacks.forEach(feedback => {
+        const feedbackItem = document.createElement('div');
+        feedbackItem.classList.add('feedback-item');
+        feedbackItem.innerHTML = `
+            <p>${feedback.feedbackMessage}</p>
+            `;
+        feedbackList.appendChild(feedbackItem);
+    });
+}
+
+// Display feedback on page load
+document.addEventListener('DOMContentLoaded', displayFeedback);
