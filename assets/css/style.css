@@ -216,6 +216,11 @@ body {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+.task-list li.checked {
+    text-decoration: line-through;
+    color: var(--pomo-dark-blue);
+}
+
 /* Darker background on hover */
 .task-list li:hover {
     background: var(--pomo-dark-blue);
