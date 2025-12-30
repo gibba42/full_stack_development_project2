@@ -221,6 +221,15 @@ body {
     color: var(--pomo-dark-blue);
 }
 
+/* Make the 'cross' area larger to make it easier to click on */
+.close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
 /* Darker background on hover */
 .task-list li:hover {
     background: var(--pomo-dark-blue);
