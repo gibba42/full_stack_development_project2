@@ -6,8 +6,12 @@
 */
 
 let timer; // Holds the interval returned by setInterval()
+// Timer variables
 const workMinutes = 25;
 const breakMinutes = 5;
+const longBreakMinutes = 20;
+const sessionsBeforeLongBreak = 4;
+let completedWorkSessions = 0;
 let minutes = workMinutes;
 let seconds = 0;
 let currentMode = 'work' // Tracks whether the user is working or on a break
@@ -42,10 +46,17 @@ function updateTimer() {
     if (minutes === 0 && seconds === 0) {
         clearInterval(timer);
         if (currentMode === 'work') {
+            completedWorkSessions++;
             currentMode = 'break';
-            minutes = breakMinutes;
+            if (completedWorkSession % sessionsBeforeLongBreak === 0) {
+                minutes = longBreakMinutes;
+                alert('Great work! Time for a long break');
+            } else {
+                minutes = breakMinutes;
+                alert('Good job, time for a short break!');
+            }
+
             seconds = 0;
-            alert('Good job, time for a break!');
         } else {
             currentMode = 'work';
             minutes = workMinutes;
@@ -101,6 +112,7 @@ function restartTimer() {
     currentMode = 'work';
     minutes = workMinutes;
     seconds = 0;
+    completedWorkSessions = 0; // Resets the work sessions count
     // Ensures the timer state is "paused" and updates the button to "Start"
     isPaused = false;
     togglePauseResume();
