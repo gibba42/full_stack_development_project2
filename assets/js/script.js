@@ -235,7 +235,10 @@ document.getElementById('feedback-form').addEventListener('submit', function(eve
 
 function saveFeedback(feedback) {
     let feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
-    feedbacks.push(feedback);
+    feedbacks.push({
+        ...feedback,
+        date: new Date().toISOString()
+    });
     localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
 }
 
@@ -258,10 +261,18 @@ function displayFeedback() {
         feedbackItem.classList.add('feedback-item');
         const moodSrc = moodImages[feedback.mood];
         const moodAlt = moodAlts[feedback.mood] || 'mood';
+        const date = feedback.date
+            ? new Date(feedback.date).toLocaleDateString('en-GB', {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric'
+            })
+            : '';
         feedbackItem.innerHTML = `
             ${moodSrc ? `<img class="mood-icon" src="${moodSrc}" alt="${moodAlt}">` : ''}
             <p>${feedback.feedbackMessage}</p>
-            `;
+            ${date ? `<small class="feedback-date">${date}</small>` : ''}
+        `;
         feedbackList.appendChild(feedbackItem);
     });
 }

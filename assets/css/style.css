@@ -390,6 +390,13 @@ body {
     margin-right: 8px;
 }
 
+.feedback-date {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
 textarea {
     width: 100%;
     padding: 0.5rem;
