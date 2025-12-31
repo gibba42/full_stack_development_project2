@@ -350,10 +350,10 @@ img {
     display: flex;
     justify-content: center;
     gap: 1 rem;
-    margin-bottom: 1 rem;
+    margin-bottom: 1rem;
     border: none;
     margin: 1rem 0;
-    padding: 0;
+    padding: 0rem;
 }
 
 .emoji-group label {
