@@ -2,7 +2,67 @@
 
 ## Pomodoro timer
 
-## Bugs
+This project is a simple, responsive Pomodoro Timer web application designed to help users improve focus, manage their time effectively, and reflect on how their work went.
+
+The application is built using HTML, CSS, and JavaScript.
+
+## Live Site
+
+## Project Purpose
+
+The purpose of this project is to create an interactive front-end web application that helps users apply the Pomodoro Technique to their daily work. 
+
+The application allows users to:
+- Track focused work sessions
+- Take structured breaks
+- Manage tasks
+- Reflect on productivity through session feedback
+
+## Target Audience
+
+This application is aimed at:
+- Students
+- Developers
+- Writers
+- Anyone who wants to improve their productivity
+
+## Features:
+
+### Pomodoro Timer
+- 25-minute work sessions
+- 5-minute short breaks
+- Automatic **20-minute long break after 4 work sessions**
+- Start, pause, and restart controls
+- Clear visual indicator for work/break mode
+
+### Session Tracker
+- Visual dot tracker showing completed work sessions
+- Session counter (e.g. Session 2/4)
+- Automatically resets after long break or restart
+
+### Task List
+![Task list interface](assets/images/readme/task-list.png)
+- Users can add tasks
+- Tasks can be marked as complete
+- Tasks can be removed individually
+- Task interactions provide immediate visual feedback
+
+### Session Feedback
+- Users can select a mood emoji
+- Users can add optional written feedback
+- Feedback is saved using browser local storage
+- Each feedback entry includes a date stamp
+- Saved feedback persists across page reloads
+
+### How to user the timer page
+- Detailed guide on how to use the timer
+- Explains all features on the main page, with accompanying screenshots
+
+### Learn more age
+- Explanation of the Pomodoro Technique
+- External resources for further reading
+
+### Bugs
 
 | Title | Description | Fix | Status |
 |-------|-------------|-----|--------|
@@ -12,14 +72,31 @@
 | Tasks striking through instead of closing when clicking on cross | After adding a task, the first click on the 'cross' strikes the task through rather than closing it. | Issue was not the strike through formatting, but the size of the close cross. Increased the area of the close cross to make it easier to click. | Resolved |
 | Timer not automatically switching to break | When running the timer, once the timer completes a session it is not automatically switching to the next timer. Users have to click "Pause/Start" before it switches. | Issue was caused because the timerUpdate function was checking to see if the timer had reached 00:00 before decreasing the time. Changed the timerUpdate function so that time decreases before the function checks if the timer has reached 00:00. | Resolved |
 
-## Testing
+### Manual Testing
 
 | Feature | Action | Expected Result | Actual Result | Pass/Fail |
-|---------|--------|-----------------|---------------|-----------|
-| Star Timer | Click "Start" | Timer starts and counts down from 25:00, label changes to "Pause" | Timer starts and counts down correctly, label changes | Pass |
-| Pause Timer | Click "Pause" | Timer stops counting down, label changes to "Start" | Timer stops counting down, label changes | Pass | 
-| Restart Timer | Click "Restart" while the timer is running and paused | Timer should reset to 25:00 and the label should change to "Start" whether the timer is paused or running | Timer resets to show "25:00" and pauses in both states | Pass |
-| Switch to long break after 4 work sessions | Click "Start" and run the timer through 4 cycles | On the fourth cycle, the timer should change to a 20 minute long break | 
+|------|------|------|------|------|
+| Start Timer | Click "Start" | Timer starts counting down, button changes to "Pause" | Works as expected | Pass |
+| Pause Timer | Click "Pause" | Timer stops, button changes to "Start" | Works as expected | Pass |
+| Restart Timer | Click "Restart" | Timer resets to 25:00 and pauses | Works as expected | Pass |
+| Auto switch to break | Let work timer reach 00:00 | Timer switches to break automatically | Works as expected | Pass |
+| Long break logic | Complete 4 work sessions | Long break starts on 4th cycle | Works as expected | Pass |
+| Task creation | Add a task | Task appears in list | Works as expected | Pass |
+| Task completion | Click a task | Task strikes through | Works as expected | Pass |
+| Feedback saving | Submit feedback | Feedback is saved and displayed | Works as expected | Pass |
+| Feedback persistence | Reload page | Feedback remains visible | Works as expected | Pass |
+| Mobile navigation | Resize screen | Burger menu works correctly | Works as expected | Pass |
+
+## Deployment
+
+This project was deployed using **GitHub Pages**.
+
+### Deployment Steps
+1. Push final code to GitHub repository
+2. Navigate to **Settings → Pages**
+3. Select the `main` branch as the source
+4. Save and wait for deployment to complete
+5. Access the live site via the provided URL
 
 ## Credits
 
@@ -31,3 +108,12 @@
     - The task list is based on the 'W3 Schools - How to js to do list' tutorial.
 - Feedback form storage
     - The ability for users to save feedback on their sessions is based on the 'peerdh - Building a User Feedback System for Web Applications Using Local Storage' tutorial.
+
+
+## Future Improvements
+
+- Customisable timer durations
+- Dark mode
+- Session history analytics
+- Exportable feedback data
+- Audio notifications
