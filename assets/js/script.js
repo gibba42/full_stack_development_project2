@@ -14,7 +14,7 @@ const sessionsBeforeLongBreak = 4;
 let completedWorkSessions = 0;
 let minutes = workMinutes;
 let seconds = 0;
-let currentMode = 'work' // Tracks whether the user is working or on a break
+let currentMode = 'work'; // Tracks whether the user is working or on a break
 let isPaused = true; // Stage flag to know whether the user has paused the timer
 
 /**
