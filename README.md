@@ -9,6 +9,9 @@ The application is built using HTML, CSS, and JavaScript.
 
 ## Live Site
 
+- Github page: [Pomodoro Timer](https://gibba42.github.io/full_stack_development_project2/)
+- Source code: [GitHub Repository](https://github.com/gibba42/full_stack_development_project2)
+
 ## Project Purpose
 
 The purpose of this project is to create an interactive front-end web application that helps users apply the Pomodoro Technique to their daily work. 
