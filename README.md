@@ -108,6 +108,9 @@ jShint validator results:
 W3C HTML validator results:
 ![W3C HTML validator results](assets/images/readme/w3c-html-validation.png)
 
+Jigsaw CSS validator results:
+![Jigsaw validator results](assets/images/readme/jigsaw-validator-results.png)
+
 ## Deployment
 
 This project was deployed using **GitHub Pages**.
