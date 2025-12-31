@@ -2,6 +2,7 @@
 
 ## Pomodoro timer
 
+![Pomodoro timer page](assets/images/readme/index-page.png)
 This project is a simple, responsive Pomodoro Timer web application designed to help users improve focus, manage their time effectively, and reflect on how their work went.
 
 The application is built using HTML, CSS, and JavaScript.
@@ -29,6 +30,7 @@ This application is aimed at:
 ## Features:
 
 ### Pomodoro Timer
+![Timer interface](assets/images/readme/timer.png)
 - 25-minute work sessions
 - 5-minute short breaks
 - Automatic **20-minute long break after 4 work sessions**
@@ -36,6 +38,7 @@ This application is aimed at:
 - Clear visual indicator for work/break mode
 
 ### Session Tracker
+![Session tracker interface](assets/images/readme/session-tracker.png)
 - Visual dot tracker showing completed work sessions
 - Session counter (e.g. Session 2/4)
 - Automatically resets after long break or restart
@@ -48,17 +51,20 @@ This application is aimed at:
 - Task interactions provide immediate visual feedback
 
 ### Session Feedback
+![Feedback interface](assets/images/readme/feedback-section.png)
 - Users can select a mood emoji
 - Users can add optional written feedback
 - Feedback is saved using browser local storage
 - Each feedback entry includes a date stamp
 - Saved feedback persists across page reloads
 
-### How to user the timer page
+### How to use the timer page
+![How to use the timer page](assets/images/readme/learn-more-page.png)
 - Detailed guide on how to use the timer
 - Explains all features on the main page, with accompanying screenshots
 
-### Learn more age
+### Learn more page
+![Learn more page](assets/images/readme/learn-more-page.png)
 - Explanation of the Pomodoro Technique
 - External resources for further reading
 
