@@ -191,7 +191,7 @@ function newElement() {
 }
 
 // Create a "close" button and append it to each list item
-var myNodeList = document.getElementsByTagName("LI");
+var myNodeList = document.querySelectorAll("#taskList li");
 var i;
 for (i = 0; i < myNodeList.length; i++) {
     var span = document.createElement("SPAN");

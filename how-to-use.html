@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="description" content="A Pomodoro timer to track tasks and maintain productivity" />
+  </head>
+
+  <body>
+    <!-- Nav bar at the top of each page -->
+    <nav class="site-nav">
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <div class="nav-top">
+            <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+            <span class="nav-current">How to use the timer</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Timer</a>
+            <a href="how-to-use.html" class="active">How to use the timer</a>
+            <a href="learn-more.html">Learn More</a>
+        </div>
+    </nav>
+    <main class="page">
+      <header>
+        <h1>How to use this timer</h1>
+      </header>
+      <h2>How the timer works</h2>
+      <img src="assets/images/timer-screenshot.png" alt="A screenshot of the pomodoro timer.">
+      <h3>Work sessions</h3>
+      <p>The timer tracks work sessions and breaks. Each work session lasts 25 minutes.</p>
+      <h3>Short breaks</h3>
+      <p>After each work session, take a 5 minute break.</p>
+      <h3>Long breaks</h3>
+      <p>After completing 4 work sessions, the timer starts a 20 minute long break. The timer will automatically switch between work and break modes for you.</p>
+      <h2>Using the timer controls</h2>
+      <h3>Start/Pause</h3>
+      <img src="assets/images/start-restart-buttons.png" alt="'Start/Pause' and 'Restart' buttons.">
+      <p>Click <strong>Start</strong> to begin the timer. Click <strong>Pause</strong> if you need to temporarily stop the countdown.</p>
+      <h3>Restart</h3>
+      <p>Click <strong>Restart</strong> to reset the timer back to the start of a work session. This also resets your completed session count.</p>
+      <h3> Session tracker</h3>
+      <img src="assets/images/session-tracker.png" alt="Four dots and a label showing how many work sessions are completed.">
+      <p>The dots represent completed work sessions. Each filled dot equals one completed work session. After four dots are filled, the cycle resets and a long break begins.</p>
+    </main>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
