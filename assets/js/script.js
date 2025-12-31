@@ -7,8 +7,8 @@
 
 let timer; // Holds the interval returned by setInterval()
 // Timer variables
-const workMinutes = 25;
-const breakMinutes = 5;
+const workMinutes = 1;
+const breakMinutes = 1;
 const longBreakMinutes = 20;
 const sessionsBeforeLongBreak = 4;
 let completedWorkSessions = 0;
@@ -31,6 +31,9 @@ function updateTimerStyle() {
     const timerElement = document.getElementById('timer');
     timerElement.classList.remove('work', 'break');
     timerElement.classList.add(currentMode);
+
+    updateModeLabel();
+    updateSessionUI();
 }
 
 /**
@@ -38,41 +41,74 @@ function updateTimerStyle() {
  */
 function updateTimer() {
     const timerElement = document.getElementById('timer');
-    // Update the time remaining on the page
+
+    // If paused, just keep showing the current time
     timerElement.textContent = formatTime(minutes, seconds);
-    // If paused, do not count down
     if (isPaused) return;
-    // If the timer is completed (00:00), switch modes
+
+    // Decrease time remaining
+    if (seconds > 0) {
+        seconds--;
+    } else if (minutes > 0) {
+        minutes--;
+        seconds = 59;
+    }
+
+    // Update display after decrement
+    timerElement.textContent = formatTime(minutes, seconds);
+
+    // If timer has reached 00:00, switch mode immediately
     if (minutes === 0 && seconds === 0) {
         clearInterval(timer);
+
         if (currentMode === 'work') {
             completedWorkSessions++;
-            currentMode = 'break';
-            if (completedWorkSession % sessionsBeforeLongBreak === 0) {
-                minutes = longBreakMinutes;
-                alert('Great work! Time for a long break');
-            } else {
-                minutes = breakMinutes;
-                alert('Good job, time for a short break!');
-            }
 
-            seconds = 0;
+            currentMode = 'break';
+            minutes = (completedWorkSessions % sessionsBeforeLongBreak === 0)
+                ? longBreakMinutes
+                : breakMinutes;
+
+            alert(completedWorkSessions % sessionsBeforeLongBreak === 0
+                ? 'Great work! Time for a long break.'
+                : 'Good job, time for a break!');
         } else {
             currentMode = 'work';
             minutes = workMinutes;
-            seconds = 0;
             alert('Break over, time to work!');
         }
+
+        seconds = 0;
         updateTimerStyle();
         startTimer();
-        return;
     }
-    //Otherwise, decrease time remaining
-    if (seconds > 0 ) {
-        seconds--;
-    } else {
-        seconds = 59;
-        minutes--;
+} 
+
+function updateModeLabel() {
+    const modeLabel = document.getElementById('modeLabel');
+    if (!modeLabel) return;
+
+    modeLabel.textContent = (currentMode === 'work') ? 'Work' : 'Break';
+
+    modeLabel.classList.remove('work', 'break');
+    modeLabel.classList.add(currentMode);
+}
+
+function updateSessionUI() {
+    const sessionText = document.getElementById('sessionText');
+    const dotsWrap = document.getElementById('sessionDots');
+    const total = typeof sessionsBeforeLongBreak !== 'undefined' ? sessionsBeforeLongBreak : 4;
+    const done = typeof completedWorkSessions !== 'undefined' ? (completedWorkSessions % total) : 0;
+
+    if (sessionText) {
+        sessionText.textContent = `Session ${done}/${total}`;
+    }
+
+    if (dotsWrap) {
+        const dots = dotsWrap.querySelectorAll('.dot');
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle('filled', idx < done);
+        });
     }
 }
 
@@ -113,6 +149,7 @@ function restartTimer() {
     minutes = workMinutes;
     seconds = 0;
     completedWorkSessions = 0; // Resets the work sessions count
+    updateTimerStyle();
     // Ensures the timer state is "paused" and updates the button to "Start"
     isPaused = false;
     togglePauseResume();
@@ -240,5 +277,10 @@ document.getElementById('resetFeedback').addEventListener('click', function () {
     }
 });
 
+// Update timer on page load
+document.addEventListener('DOMContentLoaded', function () {
+    updateTimerStyle();
+    displayFeedback();
+});
 // Display feedback on page load
 document.addEventListener('DOMContentLoaded', displayFeedback);

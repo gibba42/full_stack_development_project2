@@ -6,6 +6,13 @@
     --pomo-white: #ffffff;
 }
 
+/* Prevent page from "overflowing" and showing a horizontal scroll bar */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: sans-serif;
     line-height: 1.5;
@@ -85,6 +92,7 @@ body {
         flex-wrap: wrap;
         padding: 8px 12px;
         font-size: 0.9rem;
+        overflow-x: hidden;
     }
 
     .site-nav .nav-top {
@@ -167,6 +175,7 @@ body {
     margin-top: 75px;
     display: flex;
     justify-content: space-evenly;
+    gap: 6px;
 }
 
 .control-buttons button {
@@ -179,6 +188,77 @@ body {
 .control-buttons button:hover {
     background-color: var(--pomo-blue);
     transition: background-color 0.3s;
+}
+
+/* Timer status (mode + session tracker) */
+.timer-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* Session tracker (dots & text) */
+.session-tracker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Mode label (shows whether the timer is in "Work" or "Break" mode */
+.mode-label {
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--pomo-dark-blue);
+    color: var(--pomo-white);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.mode-label.work {
+    background-color: var(--pomo-blue);
+    
+}
+
+.mode-label.break {
+    background-color: var(--pomo-light-blue);
+}
+
+.timer-circle.work {
+    background-color: var(--pomo-blue);
+    box-shadow: 0 0 0 6px rgba(83, 101, 181, 0.25);
+}
+
+.timer-circle.break {
+    background-color: var(--pomo-light-blue);
+    box-shadow: 0 0 0 6px rgba(141, 153, 206, 0.25);
+}
+
+/* Session dots */
+.session-dots {
+    display: inline-flex;
+    gap: 6px;
+}
+
+.session-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.session-dots .dot.filled {
+    background: var(--pomo-dark-blue);
+}
+
+.session-text {
+    font-weight: 600;
+    color: #333;
 }
 
 /* Task list formatting */
