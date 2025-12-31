@@ -89,8 +89,12 @@ This application is aimed at:
 | Long break logic | Complete 4 work sessions | Long break starts on 4th cycle | Works as expected | Pass |
 | Task creation | Add a task | Task appears in list | Works as expected | Pass |
 | Task completion | Click a task | Task strikes through | Works as expected | Pass |
+| Task deletion | Click on the 'x' next to a task | Task is removed from list | Works as expected | Pass |
 | Feedback saving | Submit feedback | Feedback is saved and displayed | Works as expected | Pass |
 | Feedback persistence | Reload page | Feedback remains visible | Works as expected | Pass |
+| Clear feedback | Click on the 'Clear saved feedback' button | All saved feedback should be removed | Works as expected | Pass |
+| Internal navigation | Click on each link in the nav bar to check the correct pages load | Nav bar should take users to the correct page | Works as expected | Pass |
+| External navigation | Click on external links | Links should open in a new tab | Works as expected | Pass |
 | Mobile navigation | Resize screen | Burger menu works correctly | Works as expected | Pass |
 
 ## Deployment
