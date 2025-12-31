@@ -97,6 +97,14 @@ This application is aimed at:
 | External navigation | Click on external links | Links should open in a new tab | Works as expected | Pass |
 | Mobile navigation | Resize screen | Burger menu works correctly | Works as expected | Pass |
 
+### Automated testing
+
+jShint validator results:
+![jShint validator results](assets/images/readme/jshint-output.png)
+
+W3C HTML validator results:
+![W3C HTML validator results](assets/images/readme/w3c-html-validation.png)
+
 ## Deployment
 
 This project was deployed using **GitHub Pages**.
