@@ -59,7 +59,7 @@ This application is aimed at:
 - Saved feedback persists across page reloads
 
 ### How to use the timer page
-![How to use the timer page](assets/images/readme/learn-more-page.png)
+![How to use the timer page](assets/images/readme/how-to-use-page.png)
 - Detailed guide on how to use the timer
 - Explains all features on the main page, with accompanying screenshots
 
