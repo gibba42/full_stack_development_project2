@@ -7,8 +7,8 @@
 
 let timer; // Holds the interval returned by setInterval()
 // Timer variables
-const workMinutes = 1;
-const breakMinutes = 1;
+const workMinutes = 25;
+const breakMinutes = 5;
 const longBreakMinutes = 20;
 const sessionsBeforeLongBreak = 4;
 let completedWorkSessions = 0;

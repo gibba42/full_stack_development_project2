@@ -220,6 +220,7 @@ body {
     text-transform: uppercase;
 }
 
+/* Change colors based on 'work' or 'break' state */
 .mode-label.work {
     background-color: var(--pomo-blue);
     
@@ -276,6 +277,17 @@ body {
 .task-input input {
     flex: 1;
     padding: 10px;
+    height: 42px;
+}
+
+.btn-add {
+    background-color : var(--pomo-light-blue);
+    color: var(--pomo-white);
+    height: 42px;
+}
+
+.btn-add:hover {
+    background-color: var(--pomo-blue);
 }
 
 .task-list {
