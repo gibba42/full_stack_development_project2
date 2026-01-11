@@ -350,6 +350,7 @@ img {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    flex-wrap: nowrap;
     margin-bottom: 1rem;
     border: none;
     margin: 1rem;
@@ -383,9 +384,17 @@ img {
 .emoji-group img {
     width: 48px;
     height: 48px;
+    max-width: none;
     filter: grayscale(100%);
+    object-fit: contain;
+    flex: 0 0 auto;
     opacity: 0.5;
     transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+}
+
+/* Remove the greyscale filter on hover */
+.emoji-group img:hover {
+    filter: grayscale(0%);
 }
 
 .mood-icon {
