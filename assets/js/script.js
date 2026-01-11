@@ -69,13 +69,23 @@ function updateTimer() {
                 ? longBreakMinutes
                 : breakMinutes;
 
-            alert(completedWorkSessions % sessionsBeforeLongBreak === 0
-                ? 'Great work! Time for a long break.'
-                : 'Good job, time for a break!');
+            Swal.fire({
+                icon: "success",
+                title: completedWorkSessions % sessionsBeforeLongBreak === 0
+                    ? 'Great work!'
+                    : 'Good job!',
+                text: completedWorkSessions % sessionsBeforeLongBreak === 0
+                    ? 'Time for a long break.'
+                    : 'Time for a break!'
+            });
         } else {
             currentMode = 'work';
             minutes = workMinutes;
-            alert('Break over, time to work!');
+            Swal.fire({
+                icon: 'warning',
+                title: 'Break over!',
+                text: 'Time to work!'
+            });
         }
 
         seconds = 0;
@@ -172,7 +182,10 @@ function newElement() {
     var t = document.createTextNode(inputValue);
     li.appendChild(t);
     if (inputValue === '') {
-        alert("Add a description of the task.");
+        Swal.fire({
+            title: "Add a description of the task.",
+            icon: "warning"
+        });
     } else {
         document.getElementById("taskList").appendChild(li);
     }
