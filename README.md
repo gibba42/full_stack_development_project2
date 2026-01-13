@@ -8,7 +8,26 @@ This project is a simple, responsive Pomodoro Timer web application designed to 
 The application is built using HTML, CSS, and JavaScript.
 
 ## Table of contents:
-1. [**Live Site**](##live-site)
+1. [**Live Site**](#live-site)
+1. [**Project Purpose**](#project-purpose)
+    * [***Target Audience***](#target-audience)
+    * [***User Stories***](#user-stories)
+1. [**Features**](#features)
+    * [***Pomodoro Timer***](#pomodoro-timer-1)
+    * [***Session Tracker***](#session-tracker)
+    * [***Task List***](#task-list)
+    * [***Session Feedback***](#session-feedback)
+    * [***How to Use the Timer***](#how-to-use-the-timer-page)
+    * [***Learn More***](#learn-more-page)
+1. [**Bugs**](#bugs)
+1. [**Manual Testing**](#manual-testing)
+1. [**Automated Testing**](#automated-testing)
+1. [**Deployment**](#deployment)
+    * [***Deployment Steps***](#deployment-steps)
+1. [**Credits**](#credits)
+    * [***Code From Tutorials***](#code-from-tutorials)
+1. [**Future Improvements**](#future-improvements)
+
 
 ## Live Site
 
@@ -25,15 +44,28 @@ The application allows users to:
 - Manage tasks
 - Reflect on productivity through session feedback
 
-## Target Audience
+### Target Audience
 
 This application is aimed at:
 - Students
 - Developers
 - Writers
+- Users with ADHD and other nerodiversity 
 - Anyone who wants to improve their productivity
 
+### User Stories
+
+As a user, I want an easy to use Pomodoro timer.
+As a user, I want to be able to track my to-do list.
+As a user, I want to be able to create my own list of tasks.
+As a user, I want to be able to track which tasks I've completed.
+As a user, I want to be able to improve my productivity.
+As a user, I want to be able to capture feedback on how my work went.
+As a user, I want to learn more about the Pomodoro method.
+
 ## Features:
+
+The site aims to fullfil the above user stories by providing the following features:
 
 ### Pomodoro Timer
 ![Timer interface](assets/images/readme/timer.png)
@@ -74,7 +106,7 @@ This application is aimed at:
 - Explanation of the Pomodoro Technique
 - External resources for further reading
 
-### Bugs
+## Bugs
 
 | Title | Description | Fix | Status |
 |-------|-------------|-----|--------|
