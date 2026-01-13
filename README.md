@@ -7,6 +7,9 @@ This project is a simple, responsive Pomodoro Timer web application designed to 
 
 The application is built using HTML, CSS, and JavaScript.
 
+## Table of contents:
+1. [**Live Site**](##live-site)
+
 ## Live Site
 
 - Github page: [Pomodoro Timer](https://gibba42.github.io/full_stack_development_project2/)

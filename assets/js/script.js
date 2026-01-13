@@ -5,6 +5,8 @@
  * Allows users to pause/resume and restart the timer
 */
 
+/* To test, set the minutes to 0 and seconds to 5 */
+
 let timer; // Holds the interval returned by setInterval()
 // Timer variables
 const workMinutes = 25;
@@ -94,6 +96,7 @@ function updateTimer() {
     }
 } 
 
+// Change the timer label depending on current mode
 function updateModeLabel() {
     const modeLabel = document.getElementById('modeLabel');
     if (!modeLabel) return;
@@ -104,6 +107,7 @@ function updateModeLabel() {
     modeLabel.classList.add(currentMode);
 }
 
+// Update the session completed dots
 function updateSessionUI() {
     const sessionText = document.getElementById('sessionText');
     const dotsWrap = document.getElementById('sessionDots');
@@ -246,6 +250,7 @@ document.getElementById('feedback-form').addEventListener('submit', function(eve
     this.reset();
 });
 
+// Save feedback to local storage
 function saveFeedback(feedback) {
     let feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
     feedbacks.push({
@@ -255,6 +260,7 @@ function saveFeedback(feedback) {
     localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
 }
 
+// Add feedback to list
 function displayFeedback() {
     const feedbackList = document.getElementById('feedbackList');
     feedbackList.innerHTML = '';
