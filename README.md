@@ -20,8 +20,10 @@ The application is built using HTML, CSS, and JavaScript.
     * [***How to Use the Timer***](#how-to-use-the-timer-page)
     * [***Learn More***](#learn-more-page)
 1. [**Bugs**](#bugs)
-1. [**Manual Testing**](#manual-testing)
-1. [**Automated Testing**](#automated-testing)
+1. [**Testing**](#testing)
+    * [***Manual Testing***](#manual-testing)
+    * [***Automated Testing***](#automated-testing)
+    * [***Responsiveness Testing***](#responsiveness-testing)
 1. [**Deployment**](#deployment)
     * [***Deployment Steps***](#deployment-steps)
 1. [**Credits**](#credits)
@@ -116,6 +118,10 @@ The site aims to fullfil the above user stories by providing the following featu
 | Tasks striking through instead of closing when clicking on cross | After adding a task, the first click on the 'cross' strikes the task through rather than closing it. | Issue was not the strike through formatting, but the size of the close cross. Increased the area of the close cross to make it easier to click. | Resolved |
 | Timer not automatically switching to break | When running the timer, once the timer completes a session it is not automatically switching to the next timer. Users have to click "Pause/Start" before it switches. | Issue was caused because the timerUpdate function was checking to see if the timer had reached 00:00 before decreasing the time. Changed the timerUpdate function so that time decreases before the function checks if the timer has reached 00:00. | Resolved |
 
+## Testing
+
+The project has been thoroughly tested, both manually and using automated tests. 
+
 ### Manual Testing
 
 | Feature | Action | Expected Result | Actual Result | Pass/Fail |
@@ -140,11 +146,19 @@ The site aims to fullfil the above user stories by providing the following featu
 jShint validator results:
 ![jShint validator results](assets/images/readme/jshint-output.png)
 
+Of the warnings shown, the only ones that may impact a user's ability to use the site are the esversion 9 and esversion 11 availability. According to "Can I use", 95.7% of users can use optional chaining, so this risk is deemed acceptable. 
+![Can I use results](assets/images/readme/can-i-use.png)
+
 W3C HTML validator results:
 ![W3C HTML validator results](assets/images/readme/w3c-html-validation.png)
 
 Jigsaw CSS validator results:
 ![Jigsaw validator results](assets/images/readme/jigsaw-validator-results.png)
+
+### Responsiveness testing
+
+The pages were tested at 300px width, lower than the 320px requirement for robustness. Elements scaled correctly and no horizontal scroll bars appeared. 
+![Mobile device test](assets/images/readme/responsiveness-test.png)
 
 ## Deployment
 
