@@ -117,6 +117,7 @@ The site aims to fullfil the above user stories by providing the following featu
 | Feedback not saving emojis | Users can save text on how their session was, but emojis are not saving or being displayed. | Updated the script so that selected emojis are saved and displayed above saved feedback. | Resolved |
 | Tasks striking through instead of closing when clicking on cross | After adding a task, the first click on the 'cross' strikes the task through rather than closing it. | Issue was not the strike through formatting, but the size of the close cross. Increased the area of the close cross to make it easier to click. | Resolved |
 | Timer not automatically switching to break | When running the timer, once the timer completes a session it is not automatically switching to the next timer. Users have to click "Pause/Start" before it switches. | Issue was caused because the timerUpdate function was checking to see if the timer had reached 00:00 before decreasing the time. Changed the timerUpdate function so that time decreases before the function checks if the timer has reached 00:00. | Resolved |
+| Task list not saving to local storage properly | The task list disappears when changing between pages | Issue wasn't with saving to local storage. It was that the content wasn't being loaded on page load. Updated the 'DOMContentLoaded' section at the end of the script to load the task list as well. | Resolved |
 
 ## Testing
 
@@ -134,6 +135,7 @@ The project has been thoroughly tested, both manually and using automated tests.
 | Task creation | Add a task | Task appears in list | Works as expected | Pass |
 | Task completion | Click a task | Task strikes through | Works as expected | Pass |
 | Task deletion | Click on the 'x' next to a task | Task is removed from list | Works as expected | Pass |
+| Task saving | Add tasks, then switch to a different page and back to the index page | Task list should be retained | Task list remains the same after switching pages | Pass |
 | Feedback saving | Submit feedback | Feedback is saved and displayed | Works as expected | Pass |
 | Feedback persistence | Reload page | Feedback remains visible | Works as expected | Pass |
 | Clear feedback | Click on the 'Clear saved feedback' button | All saved feedback should be removed | Works as expected | Pass |

@@ -335,4 +335,8 @@ document.addEventListener('DOMContentLoaded', function () {
     displayFeedback();
 });
 // Display feedback on page load
-document.addEventListener('DOMContentLoaded', displayFeedback);
+document.addEventListener('DOMContentLoaded', function () {
+    updateTimerStyle();
+    renderTasks();
+    displayFeedback();
+});
