@@ -38,6 +38,33 @@ body {
     text-align: center;
 }
 
+.howto h2 {
+    width: 100%;
+    max-width: 800px;
+    margin: 2.25rem auto 1rem;
+    padding: 0.75rem 1rem;
+    border-left: 6px solid var(--pomo-dark-blue);
+    background: rgba(141, 153, 206, 0.15);
+    border-radius: 8px;
+}
+
+/* How-to page: secondary section headers */
+.howto h3 {
+    width: 100%;
+    max-width: 800px;
+    margin: 1.5rem auto 0.75rem;
+    padding-left: 0.75rem;
+    background: rgba(141, 153, 206, 0.15);
+    font-weight: 600;
+}
+
+
+/* Limit the width of the intro text on the index page */
+.intro-text {
+    width: min(60vmin, 500px);
+    margin: 0.75rem auto 0;
+}
+
 /* Nav bar */
 .site-nav {
     background-color: var(--pomo-blue);

@@ -144,20 +144,25 @@ The project has been thoroughly tested, both manually and using automated tests.
 ### Automated testing
 
 jShint validator results:
+
 ![jShint validator results](assets/images/readme/jshint-output.png)
 
 Of the warnings shown, the only ones that may impact a user's ability to use the site are the esversion 9 and esversion 11 availability. According to "Can I use", 95.7% of users can use optional chaining, so this risk is deemed acceptable. 
+
 ![Can I use results](assets/images/readme/can-i-use.png)
 
 W3C HTML validator results:
+
 ![W3C HTML validator results](assets/images/readme/w3c-html-validation.png)
 
 Jigsaw CSS validator results:
+
 ![Jigsaw validator results](assets/images/readme/jigsaw-validator-results.png)
 
 ### Responsiveness testing
 
 The pages were tested at 300px width, lower than the 320px requirement for robustness. Elements scaled correctly and no horizontal scroll bars appeared. 
+
 ![Mobile device test](assets/images/readme/responsiveness-test.png)
 
 ## Deployment
