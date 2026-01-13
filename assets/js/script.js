@@ -198,7 +198,7 @@ function renderTasks(){
     tasks.forEach(task => addTaskToDOM(task.text, task.checked));
 }
 
-function addTaskToDOM(text, checked = flase) {
+function addTaskToDOM(text, checked = false) {
     const li = document.createElement("li");
     li.textContent = text;
     if (checked) li.classList.add("checked");
