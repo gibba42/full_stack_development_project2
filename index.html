@@ -34,8 +34,11 @@
         focus period.
       </p>
     </header>
+    <!-- Timer element -->
     <div class="timer-circle" id="timer">25:00</div>
+    <!-- Current mode label -->
     <span id="modeLabel" class="mode-label">Work</span>
+    <!-- Timer control buttons -->
     <div class="control-buttons">
         <button onclick="togglePauseResume()">
             Start
@@ -45,6 +48,7 @@
         </button>
     </div>
     <div class="timer-status" aria-live="polite">
+      <!-- Session tracker to show how many work sessions have been completed -->
       <div class="session-tracker">
         <div id="sessionDots" class="session-dots" role="group" aria-label="Completed work sessions">
           <span class="dot"></span>
@@ -55,16 +59,21 @@
         <span id="sessionText" class="session-text">Session 0/4</span>
       </div>
     </div> 
+    <!-- Task list element -->
     <section class="tasks">
         <h2>Tasks</h2>
+        <!-- Task input -->
         <div class="task-input">
             <input id="taskInput" type="text" placeholder="Add a task" maxlength="120"/>
             <span onclick="newElement()" class="btn btn-add">Add</span>
         </div>
+        <!-- Task list -->
         <ul id="taskList" class="task-list"></ul>
     </section>
+    <!-- Session feedback element -->
     <section class="session-feedback" aria-labelledby="feedback-heading">
       <h2 id="feedback-heading">How did your session go?</h2>
+      <!-- Feedback form -->
       <form id="feedback-form">
         <fieldset class="emoji-group">
           <legend>How did you feel?</legend>
@@ -96,6 +105,8 @@
     <div id="feedbackList"></div>
     <button id="resetFeedback" class="btn">Clear saved feedback</button>
     </main>
+    <!-- SweetAlert2 script, required for nicer alerts-->
+     <!-- MUST BE LOADED BEFORE SCRIPT.JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="assets/js/script.js"></script>
   </body>
