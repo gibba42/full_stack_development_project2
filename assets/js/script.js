@@ -179,62 +179,84 @@ function restartTimer() {
  * Allows users to add tasks below the timer and tick them off as they're completed
  */
 
+/* Save tasks to local storage */
+
+const TASKS_KEY = "tasks";
+
+function getTasks() {
+    return JSON.parse(localStorage.getItem(TASKS_KEY)) || [];
+}
+
+function saveTasks(tasks) {
+    localStorage.setItem(TASKS_KEY, JSON.stringify(tasks));
+}
+
+function renderTasks(){
+    const taskList = document.getElementById("taskList");
+    taskList.innerHTML = "";
+    const tasks = getTasks();
+    tasks.forEach(task => addTaskToDOM(task.text, task.checked));
+}
+
+function addTaskToDOM(text, checked = flase) {
+    const li = document.createElement("li");
+    li.textContent = text;
+    if (checked) li.classList.add("checked");
+    const span = document.createElement("span");
+    span.className = "close";
+    span.textContent = "x";
+    // Delete task
+    span.addEventListener("click", function (e) {
+        e.stopPropagation(); // prevents toggling checked when deleting
+        deleteTask(text);
+    });
+    // Toggle checked
+    li.addEventListener("click", function () {
+        li.classList.toggle("checked");
+        updateTaskChecked(text, li.classList.contains("checked"));
+    });
+    li.appendChild(span);
+    document.getElementById("taskList").appendChild(li);
+}
+
+function addTask(text) {
+    const tasks = getTasks();
+    tasks.push({ text, checked: false });
+    saveTasks(tasks);
+    renderTasks();
+}
+
+function deleteTask(text) {
+    let tasks = getTasks();
+    tasks = tasks.filter(t => t.text !== text);
+    saveTasks(tasks);
+    renderTasks();
+}
+
+function updateTaskChecked(text, checked) {
+    const tasks = getTasks();
+    const task = tasks.find(t => t.text === text);
+    if (!task) return;
+    task.checked = checked;
+    saveTasks(tasks);
+}
+
 // Create a new list item when clicking on the "Add" button
 function newElement() {
-    let li = document.createElement("li");
-    let inputValue = document.getElementById("taskInput").value;
-    let t = document.createTextNode(inputValue);
-    li.appendChild(t);
-    if (inputValue === '') {
+    const input = document.getElementById("taskInput");
+    const text = input.value.trim();
+
+    if (text === "") {
         Swal.fire({
             title: "Add a description of the task.",
             icon: "warning"
         });
-    } else {
-        document.getElementById("taskList").appendChild(li);
+        return;
     }
-    document.getElementById("taskInput").value = "";
-    let span = document.createElement("SPAN");
-    let txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    li.appendChild(span);
-    for (i = 0; i < close.length; i++) {
-        close[i].onclick = function() {
-            let div = this.parentElement;
-            div.style.display = "none";
-        }
-    }
-}
 
-// Create a "close" button and append it to each list item
-let myNodeList = document.querySelectorAll("#taskList li");
-var i;
-for (i = 0; i < myNodeList.length; i++) {
-    let span = document.createElement("SPAN");
-    let txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    myNodeList[i].appendChild(span);
+    addTask(text);
+    input.value = "";
 }
-
-// Click on a close button to hide the current list item
-let close = document.getElementsByClassName("close");
-var i;
-for (i=0; i < close.length; i++) {
-    close[i].onclick = function() {
-        let div = this.parentElement;
-        div.style.display = "none";
-    }
-}
-
-// Add a "checked" symbol when clicking on a list item
-let list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-    if (ev.target.tagName === 'LI') {
-        ev.target.classList.toggle('checked');
-    }
-}, false);
 
 /**
  * Feedback form
