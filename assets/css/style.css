@@ -58,6 +58,12 @@ body {
     font-weight: 600;
 }
 
+.howto p {
+    width: 100%;
+    max-width: 800px;
+    margin: 0.75rem auto;
+}
+
 
 /* Limit the width of the intro text on the index page */
 .intro-text {
