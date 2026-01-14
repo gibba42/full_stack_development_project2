@@ -89,6 +89,7 @@ The site aims to fullfil the above user stories by providing the following featu
 - Tasks can be marked as complete
 - Tasks can be removed individually
 - Task interactions provide immediate visual feedback
+- Tasks are saved to local storage
 
 ### Session Feedback
 ![Feedback interface](assets/images/readme/feedback-section.png)
