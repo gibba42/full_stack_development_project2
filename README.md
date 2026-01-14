@@ -57,13 +57,13 @@ This application is aimed at:
 
 ### User Stories
 
-As a user, I want an easy to use Pomodoro timer.
-As a user, I want to be able to track my to-do list.
-As a user, I want to be able to create my own list of tasks.
-As a user, I want to be able to track which tasks I've completed.
-As a user, I want to be able to improve my productivity.
-As a user, I want to be able to capture feedback on how my work went.
-As a user, I want to learn more about the Pomodoro method.
+- As a user, I want an easy to use Pomodoro timer.
+- As a user, I want to be able to track my to-do list.
+- As a user, I want to be able to create my own list of tasks.
+- As a user, I want to be able to track which tasks I've completed.
+- As a user, I want to be able to improve my productivity.
+- As a user, I want to be able to capture feedback on how my work went.
+- As a user, I want to learn more about the Pomodoro method.
 
 ## Features:
 
